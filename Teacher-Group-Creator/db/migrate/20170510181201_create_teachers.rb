@@ -3,7 +3,7 @@ class CreateTeachers < ActiveRecord::Migration[5.0]
     create_table :teachers do |t|
       t.string :name, {null: false}
       t.string :email, {null: false}
-      t.string :admin_status, {null: false}
+      t.integer :admin_status, {null: false, default: 2}
       t.string :password_digest, {null: false}
 
       t.timestamps(null: false)
