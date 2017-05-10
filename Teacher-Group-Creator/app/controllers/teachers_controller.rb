@@ -1,4 +1,4 @@
-class TeachersController < ApplicationRecord
+class TeachersController < ApplicationController
 
 def new
   @teacher = Teacher.new

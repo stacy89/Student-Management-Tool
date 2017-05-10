@@ -1,3 +1,3 @@
-class StudentsController < ApplicationRecord
+class StudentsController < ApplicationController
 
 end
