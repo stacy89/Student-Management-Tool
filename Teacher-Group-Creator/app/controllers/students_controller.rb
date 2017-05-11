@@ -7,4 +7,8 @@ class StudentsController < ApplicationController
     @student = Student.find(params[:id])
   end
 
+  def nonpicked
+    @student_nonpicked = Student.where(teacher_id: nil)
+  end
+
 end
