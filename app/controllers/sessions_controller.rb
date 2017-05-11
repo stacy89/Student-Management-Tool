@@ -5,9 +5,6 @@ end
 
 def create
   @teacher = Teacher.find_by(email: session_params["email"])
-    p "***************"
-    p session_params["password"]
-    p @teacher
 
   if @teacher.authenticate(session_params["password"]) == @teacher
 
@@ -16,7 +13,6 @@ def create
   else
     if @teacher.authenticate(session_params["password"]) == false
       @errors = ["Password or Email is invalid"]
-      p ("$") * 100
     else
       @errors = @teacher.errors.full_messages
     end

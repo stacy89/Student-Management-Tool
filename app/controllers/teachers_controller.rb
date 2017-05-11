@@ -20,8 +20,9 @@ class TeachersController < ApplicationController
     if @teacher.save
       redirect_to students_path
     else
+# byebug
       @errors = @teacher.errors.full_messages
-      status 406
+      render 'new', status: 406
     end
   end
 
