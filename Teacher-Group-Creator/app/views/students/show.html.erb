@@ -1,3 +1,4 @@
+<%= flash[:errors]%><br>
 <%= @student.name %><br>
 <label>Phase:</label>
 <%= @student.phase %><br>
@@ -14,3 +15,6 @@
 <label>Emergency Contact:</label><br>
 <%= @student.emergency_contact_name %><br>
 <%= @student.emergency_contact_num %><br>
+<%if session[:id] == @student.teacher_id%>
+<%= link_to "Edit student details", edit_student_path(@student.id)%>
+<%end%>

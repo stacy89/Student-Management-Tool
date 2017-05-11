@@ -8,5 +8,6 @@
   Dietary Restrictions: <%= f.text_field :dietary_restrictions, placeholder: @student.dietary_restrictions%><br>
   Emergency Contact Name: <%= f.text_field :emergency_contact_name, placeholder: @student.emergency_contact_name%><br>
   Emergency Contact Number: <%= f.text_field :emergency_contact_num, placeholder: @student.emergency_contact_num%><br>
+  Drop Student: <%= f.check_box :teacher_id, {checked: false} %><br>
   <%= f.submit :Edit %>
 <% end %>
