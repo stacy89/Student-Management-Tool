@@ -1,1 +1,7 @@
-Student index with live here!!
+<% @students.each do |student| %>
+  <%= link_to student.name, student_path(student.id) %><br>
+  <%= student.phase %><br>
+  <%= student.gender %><br>
+  <%= student.gpa %><br>
+  <%= student.num_detentions %><br><br>
+ <% end %>
