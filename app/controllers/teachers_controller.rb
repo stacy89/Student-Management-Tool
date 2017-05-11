@@ -6,7 +6,6 @@ class TeachersController < ApplicationController
 
   def show
     @teacher = Teacher.find(params[:id])
-    @groups = @teacher.group_by(2, "num_detentions")
     @students = @teacher.students
   end
 
@@ -20,13 +19,18 @@ class TeachersController < ApplicationController
     if @teacher.save
       redirect_to students_path
     else
-# byebug
       @errors = @teacher.errors.full_messages
       render 'new', status: 406
     end
   end
 
-
+  def group
+    search_by = group_params
+    @teacher = Teacher.find(session[:id])
+    @students = @teacher.students
+    @groups = @teacher.group_by(search_by["sizes"].to_i, search_by["criteria"])
+    render 'show'
+  end
 
   private
 
@@ -34,5 +38,7 @@ class TeachersController < ApplicationController
     params.require(:teacher).permit(:name, :email, :password)
   end
 
-
+  def group_params
+    params.permit("sizes", "criteria")
+  end
 end
