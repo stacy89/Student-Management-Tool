@@ -1,0 +1,12 @@
+<%= form_for @student do |f| %>
+  name: <%= f.text_field :name, placeholder: @student.name%><br>
+  Phase: <%= f.text_field :phase, placeholder: @student.phase%><br>
+  Gender: <%= f.text_field :gender, placeholder: @student.gender%><br>
+  GPA: <%= f.text_field :gpa, placeholder: @student.gpa%><br>
+  Number of Detentions: <%= f.text_field :num_detentions, placeholder: @student.num_detentions%><br>
+  Shirt Size: <%= f.text_field :shirt_size, placeholder: @student.shirt_size%><br>
+  Dietary Restrictions: <%= f.text_field :dietary_restrictions, placeholder: @student.dietary_restrictions%><br>
+  Emergency Contact Name: <%= f.text_field :emergency_contact_name, placeholder: @student.emergency_contact_name%><br>
+  Emergency Contact Number: <%= f.text_field :emergency_contact_num, placeholder: @student.emergency_contact_num%><br>
+  <%= f.submit :Edit %>
+<% end %>
