@@ -1,5 +1,15 @@
 class TeachersController < ApplicationController
 
+  def index
+    @teachers = Teacher.all
+  end
+
+  def show
+    @teacher = Teacher.find(params[:id])
+    @groups = @teacher.group_by(2, "num_detentions")
+    @students = @teacher.students
+  end
+
   def new
     @teacher = Teacher.new
   end
@@ -15,9 +25,13 @@ class TeachersController < ApplicationController
     end
   end
 
+
+
   private
 
   def teacher_params
     params.require(:teacher).permit(:name, :email, :password)
   end
+
+
 end
