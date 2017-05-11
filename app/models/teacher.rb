@@ -13,7 +13,8 @@ class Teacher < ApplicationRecord
       "Detentions" => "num_detentions"
     }
     selection = selected_criteria[criteria]
-    number_of_groups = self.students.count/number_of_students_per_group
+    number_of_groups = ((self.students.count.to_f/number_of_students_per_group.to_f).round)
+
     final_group = []
     number_of_groups.times do
       final_group << []
