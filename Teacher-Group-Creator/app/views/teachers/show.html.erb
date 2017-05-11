@@ -10,3 +10,15 @@
   <% end %>
 
 </ul>
+
+<h3>Groups</h3>
+
+<% counter = 1 %>
+<% @groups.each do |group| %>
+  <p>Group <%= counter %></p>
+  <% group.each do |student| %><br>
+  <%= student.name %>
+  <%= student.num_detentions %>
+  <% end %>
+  <% counter +=1 %>
+<% end %>

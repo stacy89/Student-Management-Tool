@@ -32,7 +32,7 @@ end
   student.dietary_restrictions = diets.shuffle.first
   student.emergency_contact_name = Faker::Name.name
   student.emergency_contact_num = Faker::Number.number(10)
-  student.teacher_id = Faker::Number.between(0, 5)
+  student.teacher_id = Faker::Number.between(1, 5)
   student.save
 end
 

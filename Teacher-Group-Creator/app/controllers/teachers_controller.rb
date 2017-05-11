@@ -6,6 +6,7 @@ class TeachersController < ApplicationController
 
   def show
     @teacher = Teacher.find(params[:id])
+    @groups = @teacher.group_by(2, "num_detentions")
     @students = @teacher.students
   end
 
