@@ -29,6 +29,10 @@ end
 private
 
 def session_params
+  p"*" * 100
+  p params
+  p"*" * 100
+
   params.require(:session).permit(:email, :password)
 end
 end
