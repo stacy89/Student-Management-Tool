@@ -1,5 +1,8 @@
+
+
 <%= flash[:errors]%><br>
-<%= @student.name %><br>
+<h2><%= @student.name %></h2><br>
+<%= image_tag @student.image.url(:medium) %> <br>
 <label>Phase:</label>
 <%= @student.phase %><br>
 <label>Gender:</label>
