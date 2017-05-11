@@ -4,15 +4,25 @@ def new
 end
 
 def create
-  @teacher = Teacher.find_by(email: session_params[:email])
+  @teacher = Teacher.find_by(email: session_params["email"])
+    p "***************"
+    p session_params["password"]
+    p @teacher
 
-  if @teacher
+  if @teacher.authenticate(session_params["password"]) == @teacher
+
     login(@teacher)
+    redirect_to root_path
   else
-    @errors = @teacher.errors.full_messages
+    if @teacher.authenticate(session_params["password"]) == false
+      @errors = ["Password or Email is invalid"]
+      p ("$") * 100
+    else
+      @errors = @teacher.errors.full_messages
+    end
     render 'new'
   end
-  redirect_to root_path
+
 end
 
 def destroy
