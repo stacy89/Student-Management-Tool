@@ -16,3 +16,4 @@ class CreateStudents < ActiveRecord::Migration[5.0]
     end
   end
 end
+# Student.create(name: 'Stacy', phase: 3, emergency_contact_name: 'Anthony', emergency_contact_num: '1234' )

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 require 'rails_helper'
 
 describe TeachersController do
@@ -15,3 +16,5 @@ describe TeachersController do
     end
   end
 end
+=======
+>>>>>>> 036d0185b6f8a1cdeb47a38db96ebf2e4246ddfc
