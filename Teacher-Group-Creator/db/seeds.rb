@@ -21,7 +21,7 @@ shirt = ["XS", "S", "M", "L", "XL", "XXL"]
   teacher.save
 end
 
-10.times do
+50.times do
   student = Student.new
   student.name = Faker::Name.name
   student.phase = Faker::Number.between(0, 3)
