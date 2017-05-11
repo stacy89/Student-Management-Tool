@@ -4,4 +4,6 @@ Rails.application.routes.draw do
 
   resources :sessions, only: [:new, :create, :destroy]
   root "students#index"
+
+  get '/nonpicked', to: 'students#nonpicked'
 end
