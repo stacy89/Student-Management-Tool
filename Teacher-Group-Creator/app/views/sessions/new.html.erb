@@ -1,0 +1,7 @@
+<%= form_tag sessions_path do %>
+  <label>Email:</label>
+  <%= email_field(:session, :email) %>
+  <label>Password:</label>
+  <%= password_field(:session, :password) %>
+  <%= submit_tag :Login %>
+<% end %>
