@@ -2718,3 +2718,147 @@ Processing by StudentsController#index as HTML
 Completed 200 OK in 94ms (Views: 49.2ms | ActiveRecord: 38.1ms)
 
 
+Started GET "/teachers/5" for ::1 at 2017-05-11 09:54:15 -0700
+Processing by TeachersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (15.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "students" WHERE "students"."teacher_id" = $1[0m  [["teacher_id", 5]]
+  [1m[36mStudent Load (1.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."teacher_id" = $1 ORDER BY "students"."num_detentions" DESC[0m  [["teacher_id", 5]]
+  Rendering teachers/show.html.erb within layouts/application
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."teacher_id" = $1[0m  [["teacher_id", 5]]
+  Rendered teachers/show.html.erb within layouts/application (6.4ms)
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+Completed 200 OK in 108ms (Views: 32.0ms | ActiveRecord: 17.3ms)
+
+
+Started DELETE "/sessions/5" for ::1 at 2017-05-11 09:54:26 -0700
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"jTelj8BAajA8HuRIv5VoDKUnBLaeCW9Jkk0AlT96egdpjTzL0FPdjQFKrY5J369x8+hK4pPrzBGUcdVa7daV4g==", "id"=>"5"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-05-11 09:54:26 -0700
+Processing by StudentsController#index as HTML
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.6ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  Rendered students/index.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 31ms (Views: 28.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/teachers/5" for ::1 at 2017-05-11 09:54:35 -0700
+Processing by TeachersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "students" WHERE "students"."teacher_id" = $1[0m  [["teacher_id", 5]]
+  [1m[36mStudent Load (0.6ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."teacher_id" = $1 ORDER BY "students"."num_detentions" DESC[0m  [["teacher_id", 5]]
+  Rendering teachers/show.html.erb within layouts/application
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."teacher_id" = $1[0m  [["teacher_id", 5]]
+  Rendered teachers/show.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 35ms (Views: 25.5ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/teachers" for ::1 at 2017-05-11 09:54:47 -0700
+Processing by TeachersController#index as HTML
+  Rendering teachers/index.html.erb within layouts/application
+  [1m[36mTeacher Load (0.4ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers"[0m
+  Rendered teachers/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 27ms (Views: 24.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/teachers/2" for ::1 at 2017-05-11 09:54:49 -0700
+Processing by TeachersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mTeacher Load (0.5ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "students" WHERE "students"."teacher_id" = $1[0m  [["teacher_id", 2]]
+  [1m[36mStudent Load (0.7ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."teacher_id" = $1 ORDER BY "students"."num_detentions" DESC[0m  [["teacher_id", 2]]
+  Rendering teachers/show.html.erb within layouts/application
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."teacher_id" = $1[0m  [["teacher_id", 2]]
+  Rendered teachers/show.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 39ms (Views: 27.0ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/teachers/3" for ::1 at 2017-05-11 09:54:52 -0700
+Processing by TeachersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "students" WHERE "students"."teacher_id" = $1[0m  [["teacher_id", 3]]
+  [1m[36mStudent Load (0.7ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."teacher_id" = $1 ORDER BY "students"."num_detentions" DESC[0m  [["teacher_id", 3]]
+  Rendering teachers/show.html.erb within layouts/application
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."teacher_id" = $1[0m  [["teacher_id", 3]]
+  Rendered teachers/show.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 36ms (Views: 27.2ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/teachers/2" for ::1 at 2017-05-11 09:55:02 -0700
+Processing by TeachersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "students" WHERE "students"."teacher_id" = $1[0m  [["teacher_id", 2]]
+  [1m[36mStudent Load (1.0ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."teacher_id" = $1 ORDER BY "students"."num_detentions" DESC[0m  [["teacher_id", 2]]
+  Rendering teachers/show.html.erb within layouts/application
+  [1m[36mStudent Load (0.6ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."teacher_id" = $1[0m  [["teacher_id", 2]]
+  Rendered teachers/show.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 44ms (Views: 32.1ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/teachers/3" for ::1 at 2017-05-11 09:55:48 -0700
+Processing by TeachersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "students" WHERE "students"."teacher_id" = $1[0m  [["teacher_id", 3]]
+  [1m[36mStudent Load (0.7ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."teacher_id" = $1 ORDER BY "students"."num_detentions" DESC[0m  [["teacher_id", 3]]
+  Rendering teachers/show.html.erb within layouts/application
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."teacher_id" = $1[0m  [["teacher_id", 3]]
+  Rendered teachers/show.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 41ms (Views: 29.7ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/teachers/4" for ::1 at 2017-05-11 09:55:50 -0700
+Processing by TeachersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "students" WHERE "students"."teacher_id" = $1[0m  [["teacher_id", 4]]
+  [1m[36mStudent Load (0.9ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."teacher_id" = $1 ORDER BY "students"."num_detentions" DESC[0m  [["teacher_id", 4]]
+  Rendering teachers/show.html.erb within layouts/application
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."teacher_id" = $1[0m  [["teacher_id", 4]]
+  Rendered teachers/show.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 43ms (Views: 30.9ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/teachers/5" for ::1 at 2017-05-11 09:55:54 -0700
+Processing by TeachersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mTeacher Load (0.4ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "students" WHERE "students"."teacher_id" = $1[0m  [["teacher_id", 5]]
+  [1m[36mStudent Load (0.8ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."teacher_id" = $1 ORDER BY "students"."num_detentions" DESC[0m  [["teacher_id", 5]]
+  Rendering teachers/show.html.erb within layouts/application
+  [1m[36mStudent Load (1.0ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."teacher_id" = $1[0m  [["teacher_id", 5]]
+  Rendered teachers/show.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 47ms (Views: 34.3ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/teachers/1" for ::1 at 2017-05-11 09:55:59 -0700
+Processing by TeachersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTeacher Load (0.4ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "students" WHERE "students"."teacher_id" = $1[0m  [["teacher_id", 1]]
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."teacher_id" = $1 ORDER BY "students"."num_detentions" DESC[0m  [["teacher_id", 1]]
+  Rendering teachers/show.html.erb within layouts/application
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."teacher_id" = $1[0m  [["teacher_id", 1]]
+  Rendered teachers/show.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 42ms (Views: 34.1ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/teachers/3" for ::1 at 2017-05-11 09:56:03 -0700
+Processing by TeachersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mTeacher Load (0.4ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "students" WHERE "students"."teacher_id" = $1[0m  [["teacher_id", 3]]
+  [1m[36mStudent Load (0.7ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."teacher_id" = $1 ORDER BY "students"."num_detentions" DESC[0m  [["teacher_id", 3]]
+  Rendering teachers/show.html.erb within layouts/application
+  [1m[36mStudent Load (0.7ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."teacher_id" = $1[0m  [["teacher_id", 3]]
+  Rendered teachers/show.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 43ms (Views: 32.5ms | ActiveRecord: 2.3ms)
+
+
