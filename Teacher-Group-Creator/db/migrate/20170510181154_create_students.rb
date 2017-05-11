@@ -7,7 +7,7 @@ class CreateStudents < ActiveRecord::Migration[5.0]
       t.float :gpa
       t.integer :num_detentions
       t.string :shirt_size
-      t.string :dietitary_restrictions
+      t.string :dietary_restrictions
       t.string :emergency_contact_name, {null: false}
       t.string :emergency_contact_num, {null: false}
       t.references :teacher

@@ -7,7 +7,14 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
+    <header>
+      <% if logged_in? %>
+        <%= link_to "logout", session_path(current_user), method: :delete %>
+        <% else %>
+          <%= link_to "login", new_session_path %>
+          <%= link_to "sign up", new_teacher_path %>
+      <% end %>
+    </header>
   <body>
     <%= yield %>
   </body>
