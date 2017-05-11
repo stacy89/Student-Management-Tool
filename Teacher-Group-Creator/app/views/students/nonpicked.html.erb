@@ -1,5 +1,4 @@
-
-<% @students.each do |student| %>
+<% @student_nonpicked.each do |student| %>
   <%= link_to student.name, student_path(student.id) %><br>
   <%= student.phase %><br>
   <%= student.gender %><br>
