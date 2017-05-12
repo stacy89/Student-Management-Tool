@@ -9,7 +9,7 @@ class TeachersController < ApplicationController
   end
 
   def show
-    if logged_in
+    if logged_in?
       @teacher = Teacher.find(params[:id])
       @students = @teacher.students
     else
