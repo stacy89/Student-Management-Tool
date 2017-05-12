@@ -1,10 +1,11 @@
 
 <%= flash[:error] %> <br>
-
-<%= form_tag sessions_path do %>
-  <label>Email:</label>
-  <%= email_field(:session, :email) %>
-  <label>Password:</label>
-  <%= password_field(:session, :password) %>
-  <%= submit_tag :Login %>
-<% end %>
+<div class="form">
+  <%= form_tag sessions_path do %>
+    <div class="form_lable"><label>Email:</label></div>
+    <div class="form_field"><%= email_field(:session, :email) %></div>
+    <div class="form_lable"><label>Password:</label></div>
+    <div class="form_field"><%= password_field(:session, :password) %></div>
+    <div class="form_button"><%= submit_tag :Login %></div>
+  <% end %>
+</div>

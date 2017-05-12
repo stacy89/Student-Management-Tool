@@ -109,3 +109,12 @@
 .form_button input-placeholder{
 
 }
+
+.css_class {
+  text-decoration: none;
+}
+
+#name {
+  font-family: sans-serif;
+}
+

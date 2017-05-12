@@ -1,11 +1,11 @@
-<h2>Teachers</h2>
+<span id="name"><h2>Teachers</h2></span>
 <%= flash[:errors]%><br>
+  <ul> <% @teachers.each do |teacher| %>
+    <li><%= link_to teacher.name, teacher_path(teacher), style: 'color:#173E43;', class: 'css_class'%>
+    <% if @currentuser.admin_status == 0 %>
+    <%= link_to "    |  Delete", teacher_path(teacher), :method => 'delete', style: 'color:#173E43;', class: 'css_class' %>
+    <% end %>
+    </li>
+    <% end %>
+  </ul>
 
-<ul> <% @teachers.each do |teacher| %>
-  <li><%= link_to teacher.name, teacher_path(teacher)%>
-  <% if @currentuser.admin_status == 0 %>
-  <%= link_to "Delete", teacher_path(teacher), :method => 'delete' %>
-  <% end %>
-  </li>
-  <% end %>
-</ul>
