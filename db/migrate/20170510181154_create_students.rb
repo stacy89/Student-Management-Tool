@@ -10,6 +10,7 @@ class CreateStudents < ActiveRecord::Migration[5.0]
       t.string :dietary_restrictions
       t.string :emergency_contact_name, {null: false}
       t.string :emergency_contact_num, {null: false}
+      t.attachment :image
       t.references :teacher
 
       t.timestamps(null: false)

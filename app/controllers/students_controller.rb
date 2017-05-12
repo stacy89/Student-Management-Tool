@@ -28,7 +28,7 @@ class StudentsController < ApplicationController
     end
     if @student.save
       p @student
-      redirect_to root_path
+      redirect_to student_path
     else
       @errors = @student.errors.full_messages
       render 'edit'
@@ -42,6 +42,6 @@ class StudentsController < ApplicationController
   private
 
   def student_params
-     params.require(:student).permit(:name, :phase, :gender, :gpa, :num_detentions, :shirt_size, :dietary_restrictions, :emergency_contact_name, :emergency_contact_num, :teacher_id)
+     params.require(:student).permit(:image, :name, :phase, :gender, :gpa, :num_detentions, :shirt_size, :dietary_restrictions, :emergency_contact_name, :emergency_contact_num, :teacher_id)
   end
 end

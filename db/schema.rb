@@ -25,6 +25,10 @@ ActiveRecord::Schema.define(version: 20170510181201) do
     t.string   "dietary_restrictions"
     t.string   "emergency_contact_name", null: false
     t.string   "emergency_contact_num",  null: false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
     t.integer  "teacher_id"
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
@@ -32,12 +36,16 @@ ActiveRecord::Schema.define(version: 20170510181201) do
   end
 
   create_table "teachers", force: :cascade do |t|
-    t.string   "name",                        null: false
-    t.string   "email",                       null: false
-    t.integer  "admin_status",    default: 2, null: false
-    t.string   "password_digest",             null: false
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
+    t.string   "name",                           null: false
+    t.string   "email",                          null: false
+    t.integer  "admin_status",       default: 2, null: false
+    t.string   "password_digest",                null: false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
   end
 
 end

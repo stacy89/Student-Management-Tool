@@ -16,6 +16,7 @@ shirt = ["XS", "S", "M", "L", "XL", "XXL"]
   teacher = Teacher.new
   teacher.name = Faker::GameOfThrones.character
   teacher.email = Faker::Internet.email
+  teacher.phone = "+" + Faker::Number.number(10).to_s
   teacher.admin_status = Faker::Number.between(0, 3)
   teacher.password = "password"
   teacher.save

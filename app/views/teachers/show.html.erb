@@ -1,4 +1,6 @@
+
 <h2> <%= @teacher.name %></h2>
+<%= image_tag @student.image.url(:medium) %> <br>
 <ul>
   <% @students.each do |student| %>
   <li><%= link_to student.name, student_path(student) %>
