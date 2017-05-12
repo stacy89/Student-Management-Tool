@@ -3,5 +3,6 @@
   <%= student.phase %><br>
   <%= student.gender %><br>
   <%= student.gpa %><br>
-  <%= student.num_detentions %><br><br>
+  <%= student.num_detentions %><br>
+  <%= link_to "Add student", assign_student_to_teacher_path(student.id), method: :put %><br>
  <% end %>
