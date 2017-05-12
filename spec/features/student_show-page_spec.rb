@@ -7,3 +7,6 @@ feature "visiting the student show page" do
     expect(page).to have_current_path student_path(student.id)
   end
 end
+
+
+

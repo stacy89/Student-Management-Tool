@@ -1,4 +1,5 @@
-<%= form_for @student do |f| %>
+
+<%= form_for @student, html: { multipart: true } do |f| %>
   name: <%= f.text_field :name, placeholder: @student.name%><br>
   Phase: <%= f.text_field :phase, placeholder: @student.phase%><br>
   Gender: <%= f.text_field :gender, placeholder: @student.gender%><br>
@@ -8,6 +9,7 @@
   Dietary Restrictions: <%= f.text_field :dietary_restrictions, placeholder: @student.dietary_restrictions%><br>
   Emergency Contact Name: <%= f.text_field :emergency_contact_name, placeholder: @student.emergency_contact_name%><br>
   Emergency Contact Number: <%= f.text_field :emergency_contact_num, placeholder: @student.emergency_contact_num%><br>
+  <%= f.file_field :image %><br>
   Drop Student: <%= f.check_box :teacher_id, {checked: false} %><br>
-  <%= f.submit :Edit %>
+  <%= f.submit :Save %>
 <% end %>
