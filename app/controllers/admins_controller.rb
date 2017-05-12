@@ -14,4 +14,16 @@ class AdminsController < ApplicationController
     end
   end
 
+  def admin_remove
+    @teacher = Teacher.find(params[:id])
+    @teacher.admin_status = 2
+
+    if @teacher.save
+      redirect_to admins_path
+    else
+      redirect_to admins_path, :flash => { :error => "Something went wrong" }
+    end
+
+  end
+
 end

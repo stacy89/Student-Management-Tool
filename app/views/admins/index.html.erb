@@ -1,8 +1,11 @@
 <% if @admins %>
   <h2>Admins</h2>
+  <%= flash[:error] %> <br>
+  <ul>
   <% @admins.each do |admin| %>
-    <%= admin.name %><br>
+   <li><%= admin.name %> <%= link_to "Remove Admin", admin_remove_path(admin.id), :method => 'PUT' %></li><br>
   <% end %>
+</ul>
 <% end %>
 
 <h1>Send admin access code (TWILIO)</h1>

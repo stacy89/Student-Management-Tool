@@ -20,6 +20,6 @@
 <label>Emergency Contact:</label><br>
 <%= @student.emergency_contact_name %><br>
 <%= @student.emergency_contact_num %><br>
-<%if session[:id] == @student.teacher_id%>
+<%if session[:id] == @student.teacher_id || @currentuser.admin_status != 2 %>
 <%= link_to "Edit student details", edit_student_path(@student.id)%>
 <%end%>

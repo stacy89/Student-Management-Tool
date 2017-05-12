@@ -11,7 +11,7 @@
 <ul>
   <% @students.each do |student| %>
   <li><%= link_to student.name, student_path(student) %>
-    <% if @teacher.id == session[:id] %>
+    <% if @teacher.id == session[:id] || @currentuser.admin_status != 2 %>
       <%= link_to "edit", edit_student_path(student) %>
     <% end %>
   </li>

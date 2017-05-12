@@ -10,14 +10,18 @@
     <header>
       <% if logged_in? %>
         <%= link_to "My Page", teacher_path(session[:id]) %>
+        <% if @teacher && @teacher.admin_status == 0 %>
+        <%= link_to "Admin Page", admins_path %>
+        <% end %>
         <%= link_to "Logout", session_path(current_user), method: :delete %>
         <% else %>
           <%= link_to "Login", new_session_path %>
           <%= link_to "Sign up", new_teacher_path %>
       <% end %>
       <br><br>
-      <%= link_to "Homepage - Teachers", teachers_path %>
-      <%= link_to "Homepage - Students", students_path %>
+      <%= link_to "Teachers", teachers_path %>
+      <%= link_to "Students", students_path %>
+      <%= link_to "Unassigned Students", nonpicked_path %>
       <br><br>
     </header>
   <body>

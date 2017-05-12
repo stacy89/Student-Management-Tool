@@ -19,5 +19,6 @@ Rails.application.routes.draw do
 
  put '/assign_student_to_teacher/:id', to: 'students#assign_student', as: "assign_student_to_teacher"
 
+ put '/admin_remove/:id' => 'admins#admin_remove', as: 'admin_remove'
 
 end
