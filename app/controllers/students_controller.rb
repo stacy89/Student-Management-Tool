@@ -28,7 +28,7 @@ class StudentsController < ApplicationController
     end
     if @student.save
       p @student
-      redirect_to root_path
+      redirect_to student_path
     else
       @errors = @student.errors.full_messages
       render 'edit'

@@ -2,7 +2,9 @@
 
 <%= flash[:errors]%><br>
 <h2><%= @student.name %></h2><br>
-<%= image_tag @student.image.url(:medium) %> <br>
+<% if @student.image_file_name != nil %>
+  <%= image_tag @student.image.url(:medium) %> <br>
+<% end %>
 <label>Phase:</label>
 <%= @student.phase %><br>
 <label>Gender:</label>
