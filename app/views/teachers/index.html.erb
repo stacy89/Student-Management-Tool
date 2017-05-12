@@ -1,6 +1,6 @@
 <h2>Teachers</h2>
 
 <ul> <% @teachers.each do |teacher| %>
-  <li><%= link_to teacher.name, teacher_path(teacher)%></li>
+  <li><%= link_to teacher.name, teacher_path(teacher)%> <%= link_to "Delete", teacher_path(teacher), :method => 'delete' %></li>
   <% end %>
 </ul>
