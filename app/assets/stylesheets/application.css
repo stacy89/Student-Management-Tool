@@ -19,13 +19,13 @@
   background-color: #173e43;
 }
 
-.header{
+#home_page_header{
   background-color: #173e43;
   position: absolute;
   right: 2%;
 }
 
-.header a{
+#home_page_header a{
   text-decoration: none;
   color: #dddfd4;
 
@@ -48,6 +48,31 @@
 .title #second_line h1{
   font-size: 120pt;
   margin-top: 0px;
+  margin-bottom: 0px;
 }
 
+/*////forms///////*/
+.errors{
+  color: red;
+}
+/*////forms///////*/
+.form{
+  background-color: #173e43;
+  width: 200px;
+  padding: 5px;
+  margin: auto;
+}
+.form_lable{
+  color: #dddfd4;
+}
+
+.form_field{
+  outline: solid red 1px;
+  color: #dddfd4;
+
+}
+
+.form_button{
+
+}
 

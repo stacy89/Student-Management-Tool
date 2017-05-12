@@ -9,7 +9,7 @@ def create
   if @teacher.authenticate(session_params["password"]) == @teacher
 
     login(@teacher)
-    redirect_to root_path
+    redirect_to students_path
   else
     if @teacher.authenticate(session_params["password"]) == false
       @errors = ["Password or Email is invalid"]

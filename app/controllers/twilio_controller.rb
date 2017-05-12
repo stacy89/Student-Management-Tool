@@ -10,9 +10,9 @@ class TwilioController < ApplicationController
     auth_token = ENV['TOKEN']
     @client = Twilio::REST::Client.new(account_sid, auth_token)
 
-    @messages = @client.account.messages.create({:to => "+1"+"9258904205",
+    @messages = @client.account.messages.create({:to => "+1"+"6505338971",
                                                   :from => "+16508661799",
-                                                  :body => "#{messages}"})
+                                                  :body => "Your access code to be an admin: #{messages}"})
   redirect_to admins_path
   end
 
