@@ -1,12 +1,20 @@
 class TeachersController < ApplicationController
 
   def index
-    @teachers = Teacher.all
+    if logged_in?
+      @teachers = Teacher.all
+    else
+      redirect_to new_session_path, :flash => { :error => "Must be logged in" }
+    end
   end
 
   def show
-    @teacher = Teacher.find(params[:id])
-    @students = @teacher.students
+    if logged_in
+      @teacher = Teacher.find(params[:id])
+      @students = @teacher.students
+    else
+      redirect_to new_session_path, :flash => { :error => "Must be logged in" }
+    end
   end
 
   def new
@@ -32,6 +40,24 @@ class TeachersController < ApplicationController
     render 'show'
   end
 
+  def admin_create
+    @teacher = Teacher.find(session[:id])
+    @students = @teacher.students
+    code = admin_params
+    if @teacher.admin_code == code["access_code"]
+      @teacher.admin_status = 1
+      @teacher.save
+    else
+      @errors = ["Invalid code"]
+    end
+    render 'show'
+  end
+
+  def destroy
+    Teacher.find(params[:id]).destroy
+    redirect_to teachers_path
+  end
+
   private
 
   def teacher_params
@@ -40,5 +66,9 @@ class TeachersController < ApplicationController
 
   def group_params
     params.permit("sizes", "criteria")
+  end
+
+  def admin_params
+    params.permit("access_code")
   end
 end
