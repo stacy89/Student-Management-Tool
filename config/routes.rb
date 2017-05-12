@@ -12,7 +12,8 @@ Rails.application.routes.draw do
 
  get '/nonpicked', to: 'students#nonpicked'
 
- post '/send_sms' => 'twilio#send_sms'
+ post '/send_sms', to: 'twilio#send_sms'
 
+ put '/assign_student_to_teacher/:id', to: 'students#assign_student', as: "assign_student_to_teacher"
 
 end

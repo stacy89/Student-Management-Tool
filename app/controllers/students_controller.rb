@@ -18,6 +18,7 @@ class StudentsController < ApplicationController
   end
 
   def update
+    @teacher = Teacher.find(session[:id])
     @student = Student.find(params[:id])
     @student.assign_attributes(student_params)
 
@@ -27,7 +28,7 @@ class StudentsController < ApplicationController
        @student.teacher_id = session[:id]
     end
     if @student.save
-      redirect_to student_path
+      redirect_to teacher_path(@teacher)
     else
       @errors = @student.errors.full_messages
       render 'edit'
@@ -36,6 +37,14 @@ class StudentsController < ApplicationController
 
   def nonpicked
     @student_nonpicked = Student.where(teacher_id: nil)
+  end
+
+  def assign_student
+    @teacher = Teacher.find(session[:id])
+    @student = Student.find(params[:id])
+    @student.teacher_id = session[:id]
+    @student.save
+    redirect_to teacher_path(@teacher)
   end
 
   private
