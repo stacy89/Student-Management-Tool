@@ -1,4 +1,9 @@
+
 <span id="name"><h2>Teachers</h2></span>
+
+<h2>Teachers</h2>
+<%= render '/errors' %> <br>
+
 <%= flash[:errors]%><br>
   <ul> <% @teachers.each do |teacher| %>
     <li><%= link_to teacher.name, teacher_path(teacher), style: 'color:#173E43;', class: 'css_class'%>

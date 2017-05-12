@@ -1,14 +1,15 @@
-
+<div class="student_details">
 <h2> <%= @teacher.name %></h2>
+<%= render '/errors' %> <br>
 <%= flash[:error] %> <br>
 
 <p>Number of students: <%= @students.count %></p>
 
 <% if @teacher.image_file_name != nil %>
-  <%= image_tag @teacher.image.url(:medium) %> <br>
+  <%= image_tag @teacher.image.url(:medium), :style => "border: 5px solid #173E43"%> <br>
 <% end %>
 
-<ul>
+<ul id="list-items">
   <% @students.each do |student| %>
   <li><%= link_to student.name, student_path(student) %>
     <% if @teacher.id == session[:id] || @currentuser.admin_status != 2 %>
@@ -51,3 +52,4 @@
   <% counter +=1 %>
 <% end %>
 <% end %>
+</div>
