@@ -9,10 +9,11 @@
   </head>
     <header>
       <% if logged_in? %>
-        <%= link_to "logout", session_path(current_user), method: :delete %>
+        <%= link_to "My Page", teacher_path(session[:id]) %>
+        <%= link_to "Logout", session_path(current_user), method: :delete %>
         <% else %>
-          <%= link_to "login", new_session_path %>
-          <%= link_to "sign up", new_teacher_path %>
+          <%= link_to "Login", new_session_path %>
+          <%= link_to "Sign up", new_teacher_path %>
       <% end %>
       <br><br>
       <%= link_to "Homepage - Teachers", teachers_path %>

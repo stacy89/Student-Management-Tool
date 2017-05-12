@@ -27,7 +27,7 @@ end
   student.name = Faker::Name.name
   student.phase = Faker::Number.between(0, 3)
   student.gender = genders.shuffle.first
-  student.gpa = (Faker::Number.between(1, 4).to_f + Faker::Number.decimal(2).to_f)
+  student.gpa = (Faker::Number.between(1, 4).to_f + Faker::Number.decimal(-2).to_f)
   student.num_detentions = Faker::Number.between(0, 10)
   student.shirt_size = shirt.shuffle.first
   student.dietary_restrictions = diets.shuffle.first

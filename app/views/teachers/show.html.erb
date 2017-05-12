@@ -1,6 +1,11 @@
 
 <h2> <%= @teacher.name %></h2>
+
+
+<p>Number of students: <%= @students.count %></p>
+
 <%= image_tag @student.image.url(:medium) %> <br>
+
 <ul>
   <% @students.each do |student| %>
   <li><%= link_to student.name, student_path(student) %>
@@ -13,6 +18,18 @@
 
 </ul>
 
+<% if @teacher.id == session[:id] %>
+  <%= form_tag new_group_path(@teacher) do %>
+  <label>Number of students in group:</label>
+  <%= select_tag "sizes", options_for_select(1..(@students.count)/2) %><br>
+  <label>Category:</label>
+  <%= select_tag "criteria", options_for_select(["Phase", "Gender", "GradePointAverage", "Detentions"]) %><br>
+  <%= submit_tag :Create %>
+<% end %>
+<% end %>
+
+
+<% if @groups %>
 <h3>Groups</h3>
 
 <% counter = 1 %>
@@ -20,7 +37,7 @@
   <p>Group <%= counter %></p>
   <% group.each do |student| %><br>
   <%= student.name %>
-  <%= student.num_detentions %>
   <% end %>
   <% counter +=1 %>
+<% end %>
 <% end %>
