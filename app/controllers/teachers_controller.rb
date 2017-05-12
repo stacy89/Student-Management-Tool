@@ -32,6 +32,19 @@ class TeachersController < ApplicationController
     render 'show'
   end
 
+  def admin_create
+    @teacher = Teacher.find(session[:id])
+    @students = @teacher.students
+    code = admin_params
+    if @teacher.admin_code == code["access_code"]
+    @teacher.admin_status = 1
+    @teacher.save
+    else
+      @errors = ["Invalid code"]
+    end
+    render 'show'
+  end
+
   private
 
   def teacher_params
@@ -40,5 +53,9 @@ class TeachersController < ApplicationController
 
   def group_params
     params.permit("sizes", "criteria")
+  end
+
+  def admin_params
+    params.permit("access_code")
   end
 end

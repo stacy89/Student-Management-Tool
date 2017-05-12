@@ -14,5 +14,6 @@ Rails.application.routes.draw do
 
  post '/send_sms' => 'twilio#send_sms'
 
+ post '/create_admin' => 'teachers#admin_create'
 
 end
