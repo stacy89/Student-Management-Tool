@@ -12,17 +12,25 @@ genders = ["male", "female", "non-binary"]
 diets = ["none", "vegetarian", "vegan"]
 shirt = ["XS", "S", "M", "L", "XL", "XXL"]
 
-5.times do
+15.times do
   teacher = Teacher.new
   teacher.name = Faker::GameOfThrones.character
   teacher.email = Faker::Internet.email
   teacher.phone = "+" + Faker::Number.number(10).to_s
-  teacher.admin_status = Faker::Number.between(0, 3)
+  teacher.admin_status = Faker::Number.between(1, 2)
   teacher.password = "password"
   teacher.save
 end
 
-50.times do
+  teacher = Teacher.new
+  teacher.name = Faker::GameOfThrones.character
+  teacher.email = 'admin@admin'
+  teacher.phone = "+" + Faker::Number.number(10).to_s
+  teacher.admin_status = 0
+  teacher.password = "password"
+  teacher.save
+
+100.times do
   student = Student.new
   student.name = Faker::Name.name
   student.phase = Faker::Number.between(0, 3)

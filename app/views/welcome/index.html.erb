@@ -1,0 +1,19 @@
+<head>
+    <title>TeacherGroupCreator</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+<body id="home_page_body">
+  <div id="home_page_header">
+    <a><%= link_to "Login |", new_session_path  %></a>
+    <a><%= link_to "Sign up", new_teacher_path %></a>
+  </div>
+  <div class="logo_container">
+    <div class="title">
+      <div id="first_line"><h1>Student</h1></div>
+      <div id="second_line"><h1>MGMT</h1></div>
+    </div>
+  </div>
+</body>

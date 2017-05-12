@@ -7,6 +7,7 @@ class CreateTeachers < ActiveRecord::Migration[5.0]
       t.integer :admin_status, {null: false, default: 2}
       t.string :password_digest, {null: false}
       t.attachment :image
+      t.string :admin_code
 
       t.timestamps(null: false)
     end

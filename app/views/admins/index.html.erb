@@ -1,0 +1,15 @@
+<% if @admins %>
+  <h2>Admins</h2>
+  <% @admins.each do |admin| %>
+    <%= admin.name %><br>
+  <% end %>
+<% end %>
+
+<h1>Send admin access code (TWILIO)</h1>
+
+<%= form_tag('/send_sms', method: 'POST') do %>
+<label>Select teacher to send admin code:</label>
+<%= select_tag "teacher", options_for_select(@not_admins.all.collect{|p| [ p.name, p.id ] })%>
+<%= submit_tag :Send %>
+<% end %>
+
