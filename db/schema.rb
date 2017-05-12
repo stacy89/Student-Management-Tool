@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 20170510181201) do
   create_table "teachers", force: :cascade do |t|
     t.string   "name",                           null: false
     t.string   "email",                          null: false
+    t.string   "phone",                          null: false
     t.integer  "admin_status",       default: 2, null: false
     t.string   "password_digest",                null: false
     t.string   "image_file_name"
