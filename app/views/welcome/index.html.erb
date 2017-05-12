@@ -7,8 +7,13 @@
   </head>
 <body id="home_page_body">
   <div id="home_page_header">
-    <a><%= link_to "Login |", new_session_path  %></a>
-    <a><%= link_to "Sign up", new_teacher_path %></a>
+  <% if logged_in? %>
+    <a><%= link_to "My Page |", teacher_path(session[:id]) %></a>
+    <a><%= link_to "Logout", session_path(current_user), method: :delete %></a>
+   <% else %>
+    <a><%= link_to "Login |", new_session_path, remote: true %></a>
+    <a><%= link_to "Sign up", new_teacher_path, remote: true %></a>
+  <% end %>
   </div>
   <div class="logo_container">
     <div class="title">

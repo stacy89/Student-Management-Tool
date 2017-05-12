@@ -5,6 +5,7 @@ class SessionsController <ApplicationController
 
   def create
     @teacher = Teacher.find_by(email: session_params["email"])
+
     if @teacher
       if @teacher.authenticate(session_params["password"]) == @teacher
 
@@ -17,6 +18,9 @@ class SessionsController <ApplicationController
           @errors = @teacher.errors.full_messages
         end
         render 'new'
+      end
+      respond_to do |format|
+        format.js
       end
     end
   end
