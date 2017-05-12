@@ -1,10 +1,12 @@
 <%= flash[:errors]%><br>
 
 <% @students.each do |student| %>
-  <%= link_to student.name, student_path(student.id) %><br>
-  <%= student.phase %><br>
-  <%= student.gender %><br>
-  <%= student.gpa %><br>
-  <%= student.num_detentions %><br><br>
+  <div class="student">
+  <p class="name"><%= link_to student.name, student_path(student.id)%></p>
+  <p>Phase: <span><%= student.phase %></span></p>
+  <p>Gender: <span><%= student.gender %></span></p>
+  <p>GPA: <span><%= student.gpa %></span></p>
+  <p>Detentions: <span><%= student.num_detentions %></span></p>
+  </div>
  <% end %>
 
