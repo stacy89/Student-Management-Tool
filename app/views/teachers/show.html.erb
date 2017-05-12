@@ -4,7 +4,9 @@
 
 <p>Number of students: <%= @students.count %></p>
 
-<%= image_tag @student.image.url(:medium) %> <br>
+<% if @teacher.image_file_name != nil %>
+  <%= image_tag @teacher.image.url(:medium) %> <br>
+<% end %>
 
 <ul>
   <% @students.each do |student| %>
