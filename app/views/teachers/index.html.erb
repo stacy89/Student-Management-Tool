@@ -1,6 +1,11 @@
 <h2>Teachers</h2>
+<%= flash[:errors]%><br>
 
 <ul> <% @teachers.each do |teacher| %>
-  <li><%= link_to teacher.name, teacher_path(teacher)%> <%= link_to "Delete", teacher_path(teacher), :method => 'delete' %></li>
+  <li><%= link_to teacher.name, teacher_path(teacher)%>
+  <% if @currentuser.admin_status == 0 %>
+  <%= link_to "Delete", teacher_path(teacher), :method => 'delete' %>
+  <% end %>
+  </li>
   <% end %>
 </ul>

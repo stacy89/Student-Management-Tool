@@ -1,3 +1,5 @@
+<%= flash[:errors]%><br>
+
 
 <%= form_for @student, html: { multipart: true } do |f| %>
   name: <%= f.text_field :name, placeholder: @student.name%><br>

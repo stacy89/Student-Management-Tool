@@ -3,14 +3,16 @@ class TeachersController < ApplicationController
   def index
     if logged_in?
       @teachers = Teacher.all
+      @currentuser = Teacher.find(session[:id])
     else
       redirect_to new_session_path, :flash => { :error => "Must be logged in" }
     end
   end
 
   def show
-    if logged_in
+    if logged_in?
       @teacher = Teacher.find(params[:id])
+      @currentuser = Teacher.find(session[:id])
       @students = @teacher.students
     else
       redirect_to new_session_path, :flash => { :error => "Must be logged in" }
@@ -25,7 +27,7 @@ class TeachersController < ApplicationController
     @teacher = Teacher.new(teacher_params)
 
     if @teacher.save
-      redirect_to students_path
+      redirect_to new_session_path
     else
       @errors = @teacher.errors.full_messages
       render 'new', status: 406
@@ -54,7 +56,12 @@ class TeachersController < ApplicationController
   end
 
   def destroy
-    Teacher.find(params[:id]).destroy
+    @teacher = Teacher.find(params[:id])
+    @teacher.students.each do |student|
+      student.teacher_id = nil
+      student.save
+    end
+    @teacher.destroy
     redirect_to teachers_path
   end
 
