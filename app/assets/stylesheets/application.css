@@ -15,6 +15,12 @@
  */
 
 /*////home page///////*/
+
+.body{
+  background-color: #dddfd4
+}
+
+/*////home page///////*/
 #home_page_body {
   background-color: #173e43;
 }
@@ -100,3 +106,6 @@
 
 }
 
+.form_button input-placeholder{
+
+}
