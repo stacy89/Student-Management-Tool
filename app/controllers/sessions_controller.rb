@@ -5,6 +5,7 @@ class SessionsController <ApplicationController
 
   def create
     @teacher = Teacher.find_by(email: session_params["email"])
+
     if @teacher
       if @teacher.authenticate(session_params["password"]) == @teacher
 

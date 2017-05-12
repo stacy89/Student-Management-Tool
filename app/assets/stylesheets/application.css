@@ -194,3 +194,12 @@
 #list-items{
   list-style: none;
 }
+
+.css_class {
+  text-decoration: none;
+}
+
+#name {
+  font-family: sans-serif;
+}
+
