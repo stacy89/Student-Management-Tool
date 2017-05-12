@@ -7,22 +7,27 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-    <header>
+    <header class="topnav"><ul>
       <% if logged_in? %>
-        <%= link_to "My Page", teacher_path(session[:id]) %>
+       <%= link_to "My Page", teacher_path(session[:id]) %>
         <% if @teacher && @teacher.admin_status == 0 %>
         <%= link_to "Admin Page", admins_path %>
         <% end %>
+        <div class="topnav" id="topnav-right">
         <%= link_to "Logout", session_path(current_user), method: :delete %>
+        </div>
         <% else %>
+        <div id="topnav-right">
           <%= link_to "Login", new_session_path %>
+        </div>
+        <div id="topnav-right">
           <%= link_to "Sign up", new_teacher_path %>
+        </div>
       <% end %>
-      <br><br>
       <%= link_to "Teachers", teachers_path %>
       <%= link_to "Students", students_path %>
       <%= link_to "Unassigned Students", nonpicked_path %>
-      <br><br>
+      </ul>
     </header>
   <body>
     <%= yield %>

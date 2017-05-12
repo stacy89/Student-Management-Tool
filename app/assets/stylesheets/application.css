@@ -76,3 +76,50 @@
 
 }
 
+.topnav {
+    background-color: #173E43;
+    overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 1% 1%;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+    background-color: #dddfd4;
+    color: black;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+#topnav-right{
+  float: right;
+  margin-top: 1%;
+  margin-right: 2%;
+  width: 5%;
+}
+
+#topnav-right a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.student_details{
+ text-align: center;
+}
+
+#list-items{
+  list-style: none;
+}
