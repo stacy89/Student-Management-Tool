@@ -17,10 +17,18 @@ shirt = ["XS", "S", "M", "L", "XL", "XXL"]
   teacher.name = Faker::GameOfThrones.character
   teacher.email = Faker::Internet.email
   teacher.phone = "+" + Faker::Number.number(10).to_s
-  teacher.admin_status = Faker::Number.between(0, 3)
+  teacher.admin_status = Faker::Number.between(1, 2)
   teacher.password = "password"
   teacher.save
 end
+
+  teacher = Teacher.new
+  teacher.name = Faker::GameOfThrones.character
+  teacher.email = 'admin@admin'
+  teacher.phone = "+" + Faker::Number.number(10).to_s
+  teacher.admin_status = 0
+  teacher.password = "password"
+  teacher.save
 
 50.times do
   student = Student.new

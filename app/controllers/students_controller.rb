@@ -27,7 +27,6 @@ class StudentsController < ApplicationController
        @student.teacher_id = session[:id]
     end
     if @student.save
-      p @student
       redirect_to student_path
     else
       @errors = @student.errors.full_messages
