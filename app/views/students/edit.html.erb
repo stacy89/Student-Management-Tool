@@ -1,0 +1,30 @@
+<%= render '/errors' %> <br>
+<%= flash[:errors]%><br>
+
+<div class="form">
+  <%= form_for @student, html: { multipart: true } do |f| %>
+    <div class="form_lable"><%= f.label :Name %></div>
+    <div class="form_field"><%= f.text_field :name, placeholder: @student.name%></div>
+    <div class="form_lable"><%= f.label :Phase %></div>
+    <div class="form_field"><%= f.text_field :phase, placeholder: @student.phase%></div>
+    <div class="form_lable"><%= f.label :Gender %></div>
+    <div class="form_field"><%= f.text_field :gender, placeholder: @student.gender%></div>
+    <div class="form_lable"><%= f.label :GPA %></div>
+    <div class="form_field"><%= f.text_field :gpa, placeholder: @student.gpa%></div>
+    <div class="form_lable"><%= f.label :"Number of Detentions" %></div>
+    <div class="form_field"><%= f.text_field :num_detentions, placeholder: @student.num_detentions%></div>
+    <div class="form_lable"><%= f.label :"Shirt Size" %></div>
+    <div class="form_field"><%= f.text_field :shirt_size, placeholder: @student.shirt_size%></div>
+    <div class="form_lable"><%= f.label :"Dietary Restrictions" %></div>
+    <div class="form_field"><%= f.text_field :dietary_restrictions, placeholder: @student.dietary_restrictions%></div>
+    <div class="form_lable"><%= f.label :"Emergency Contact Name "%></div>
+    <div class="form_field"><%= f.text_field :emergency_contact_name, placeholder: @student.emergency_contact_name%></div>
+    <div class="form_lable"><%= f.label :"Emergency Contact Number"%></div>
+    <div class="form_field"><%= f.text_field :emergency_contact_num, placeholder: @student.emergency_contact_num%></div>
+    <%= f.file_field :image %>
+    <div class="form_lable"><%= f.label :"Drop Student:"%></div>
+    <%= f.check_box :teacher_id, {checked: false} %><br>
+    <div class="form_button"><%= f.submit :Save %></div>
+  <% end %>
+</div>
+

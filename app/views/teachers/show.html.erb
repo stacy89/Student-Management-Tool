@@ -1,0 +1,55 @@
+<div class="student_details">
+<h2> <%= @teacher.name %></h2>
+<%= render '/errors' %> <br>
+<%= flash[:error] %> <br>
+
+<p>Number of students: <%= @students.count %></p>
+
+<% if @teacher.image_file_name != nil %>
+  <%= image_tag @teacher.image.url(:medium), :style => "border: 5px solid #173E43"%> <br>
+<% end %>
+
+<ul id="list-items">
+  <% @students.each do |student| %>
+  <li><%= link_to student.name, student_path(student) %>
+    <% if @teacher.id == session[:id] || @currentuser.admin_status != 2 %>
+      <%= link_to "edit", edit_student_path(student) %>
+    <% end %>
+  </li>
+
+  <% end %>
+
+</ul>
+
+<% if @teacher.id == session[:id] %>
+  <%= form_tag new_group_path(@teacher) do %>
+  <label>Number of students in group:</label>
+  <%= select_tag "sizes", options_for_select(1..(@students.count)/2) %><br>
+  <label>Category:</label>
+  <%= select_tag "criteria", options_for_select(["Phase", "Gender", "GradePointAverage", "Detentions"]) %><br>
+  <%= submit_tag :Create %>
+<% end %>
+<% end %>
+
+<% if @teacher.admin_status == 2 && @teacher.admin_code != nil  %>
+  <%= render '/errors' %>
+  <%= form_tag('/create_admin', method: 'POST')%><br>
+  <label>Enter your access code :</label>
+  <%= text_field_tag 'access_code' %>
+  <%= submit_tag :Submit %>
+
+<% end %>
+
+<% if @groups %>
+<h3>Groups</h3>
+
+<% counter = 1 %>
+<% @groups.each do |group| %>
+  <p>Group <%= counter %></p>
+  <% group.each do |student| %><br>
+  <%= student.name %>
+  <% end %>
+  <% counter +=1 %>
+<% end %>
+<% end %>
+</div>

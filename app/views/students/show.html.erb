@@ -1,0 +1,26 @@
+<%= render '/errors' %> <br>
+<%= flash[:errors]%><br>
+<div class="student_details">
+<h2><%= @student.name %></h2><br>
+<% if @student.image_file_name != nil %>
+  <%= image_tag @student.image.url(:medium), :style => "border: 5px solid #173E43" %> <br>
+<% end %>
+<label class="label">Phase:</label>
+<%= @student.phase %><br>
+<label class="label">Gender:</label>
+<%= @student.gender %><br>
+<label class="label">GPA:</label>
+<%= @student.gpa %><br>
+<label class="label">Number of Detentions:</label>
+<%= @student.num_detentions %><br>
+<label class="label">Shirt Size:</label>
+<%= @student.shirt_size %><br>
+<label class="label">Dietary Restrictions:</label>
+<%= @student.dietary_restrictions %><br>
+<label class="label">Emergency Contact:</label><br>
+<%= @student.emergency_contact_name %><br>
+<%= @student.emergency_contact_num %><br>
+<%if session[:id] == @student.teacher_id || @currentuser.admin_status != 2 %>
+<%= link_to "Edit student details", edit_student_path(@student.id)%>
+<%end%>
+</div>

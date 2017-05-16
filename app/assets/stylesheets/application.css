@@ -1,0 +1,205 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+/*////home page///////*/
+
+.body{
+  background-color: #dddfd4
+}
+
+/*////home page///////*/
+#home_page_body {
+  background-color: #173e43;
+}
+
+#home_page_header{
+  background-color: #173e43;
+  position: absolute;
+  right: 2%;
+}
+
+#home_page_header a{
+  text-decoration: none;
+  color: #dddfd4;
+
+}
+.logo_container{
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+}
+
+.title {
+  color: #dddfd4;
+}
+
+.title #first_line h1{
+  font-size: 120pt;
+  margin-bottom: 0px;
+}
+
+.title #second_line h1{
+  font-size: 120pt;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+/*////forms///////*/
+.errors{
+  color: red;
+}
+/*////forms///////*/
+.form{
+  max-width: 500px;
+  padding: 10px 20px;
+  background: #173e43;
+  margin: 10px auto;
+  padding: 20px;
+  border-radius: 8px;
+}
+.form_lable{
+  display: inline-block;
+  color: #dddfd4;
+}
+
+.form_field{
+  background: transparent;
+  border: none;
+  border-bottom: 1px dashed #fae596;
+  margin-bottom: 10px;
+
+}
+
+.form_field input {
+  background: transparent;
+  border-color: transparent;
+  border: none;
+  overflow: auto;
+  width: 100%;
+  }
+
+::-webkit placeholder { /* Chrome */
+  color: #fae596;
+}
+:-ms-form_field-placeholder { /* IE 10+ */
+  color: #fae596;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: #fae596;
+  opacity: 1;
+}
+:-moz-placeholder { /* Firefox 4 - 18 */
+  color: #fae596;
+  opacity: 1;
+}
+
+.form_button input{
+  margin-top: 20px;
+  margin-bottom: 5px;
+  text-decoration: none;
+  color: #173e43;
+  font-size: 20pt;
+  background-color: #fae596;
+  width: 100%;
+  height: 50px;
+  border-radius: 6px;
+  border: none;
+}
+
+/*////Student index///////*/
+
+.student{
+  margin-bottom: 5px;
+  background-color: #173e43;
+  padding: 10px;
+
+
+}
+.student p {
+  margin-bottom: 0px;
+  margin-top: 0px;
+  color: #dddfd4;
+}
+
+.student p span{
+  margin-bottom: 0px;
+  margin-top: 0px;
+  color: #fae596;
+}
+
+.student .name a{
+  font-size: 22pt;
+
+  color: #dddfd4;
+  text-decoration: none !important;
+}
+
+.topnav {
+    background-color: #173E43;
+    overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 1% 1%;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+    background-color: #dddfd4;
+    color: black;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+#topnav-right{
+  float: right;
+  margin-top: 1%;
+  margin-right: 2%;
+  width: 5%;
+}
+
+#topnav-right a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.student_details{
+ text-align: center;
+}
+
+#list-items{
+  list-style: none;
+}
+
+.css_class {
+  text-decoration: none;
+}
+
+#name {
+  font-family: sans-serif;
+}
+
