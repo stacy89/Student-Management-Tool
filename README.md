@@ -1,8 +1,17 @@
 # README
+# The Student Managment Tool
+A Ruby on Rails based app built to help oraganize student information, The Student Management Tool allows admins to assign different permissions to teachers of different ranks with a Twilio two-step verification process. The app allows teachers to add, update, and delete student information as well as organize students into diversified groups based on criteria like GPA, gender, attendance, ect. 
 
-Teacher-Groups-Project
+### Access the App 
 
-1.Brian Lee
-2.Stacy Areas
-3.Merty McGraw
-4.Antony Adhiban
+## Technologies/Frameworks
+* Ruby on Rails
+* Twilio API
+* Paperclip
+* Heroku
+
+## Contributors
+* Brian Lee
+* Stacy Areas
+* Merty McGraw
+* Antony Adhiban
