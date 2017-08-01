@@ -59,6 +59,9 @@
   padding-left: 70px;
 }
 
+.title #kids{
+  padding-left: 12em;
+}
 /*////forms///////*/
 .errors{
   color: red;
