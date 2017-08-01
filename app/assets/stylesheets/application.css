@@ -49,12 +49,14 @@
 .title #first_line h1{
   font-size: 120pt;
   margin-bottom: 0px;
+  padding-left: 70px;
 }
 
 .title #second_line h1{
   font-size: 120pt;
   margin-top: 0px;
   margin-bottom: 0px;
+  padding-left: 70px;
 }
 
 /*////forms///////*/
