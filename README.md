@@ -4,7 +4,7 @@ A Ruby on Rails based app built to help oraganize student information, The Stude
 
 ### Access the App 
 https://teacherstudentmanagement.herokuapp.com/
-- Temp.
+
 * email: teacher@teacher.com
 * password: teacher
 
