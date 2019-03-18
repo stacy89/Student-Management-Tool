@@ -30,7 +30,7 @@ gem 'dotenv-rails'
 gem 'paperclip', '~>5.0.0'
 
 gem 'ddtrace'
-gem 'logging-rails', :require => 'logging.rails'
+gem 'logging-rails'
 gem 'lograge'
 
 # Use Capistrano for deployment
