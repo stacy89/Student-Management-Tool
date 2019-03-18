@@ -1,4 +1,6 @@
-# config/initializers/datadog.rb
+require 'ddtrace'
+
 Datadog.configure do |c|
-    c.use :rails, service_name: 'staging-rails-app'
+  # This will activate auto-instrumentation for Rails
+  c.use :rails
 end
